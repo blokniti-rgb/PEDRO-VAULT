@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f8fa">
+    <title>PEDRO VAULT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">PEDRO<span>VAULT</span></a>
+        <span class="private-label">PRIVATE LIBRARY</span>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <p class="eyebrow">YOUR DIGITAL SPACE</p>
+            <h1>All your websites,<br>in one place.</h1>
+            <p class="subtitle">
+                Save, organize and access your favorite websites.
+            </p>
+        </section>
+
+        <section class="stats">
+            <div class="stat">
+                <span>WEBSITES</span>
+                <strong id="totalCount">0</strong>
+            </div>
+            <div class="stat">
+                <span>FAVORITES</span>
+                <strong id="favoriteCount">0</strong>
+            </div>
+            <div class="stat">
+                <span>CATEGORIES</span>
+                <strong id="categoryCount">0</strong>
+            </div>
+        </section>
+
+        <section class="add-section">
+            <h2>Add a website</h2>
+
+            <form id="websiteForm">
+                <input id="siteName" type="text"
+                    placeholder="Website name" required maxlength="60">
+
+                <input id="siteUrl" type="text"
+                    placeholder="https://example.com" required maxlength="2048">
+
+                <input id="siteDescription" type="text"
+                    placeholder="Short description" maxlength="160">
+
+                <select id="siteCategory">
+                    <option value="Cybersecurity">Cybersecurity</option>
+                    <option value="CTF">CTF</option>
+                    <option value="AI">AI</option>
+                    <option value="Tools">learning</option>
+                    <option value="Tools">movie</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <button type="submit" id="submitBtn">+ Save website</button>
+                <button type="button" id="cancelEdit" class="secondary hidden">
+                    Cancel edit
+                </button>
+            </form>
+        </section>
+
+        <section class="library">
+            <div class="library-heading">
+                <div>
+                    <h2>My Library</h2>
+                    <p>Your saved websites</p>
+                </div>
+            </div>
+
+            <div class="filters">
+                <input id="searchInput" type="search"
+                    placeholder="Search websites...">
+
+                <select id="categoryFilter">
+                    <option value="All">All categories</option>
+                    <option value="Cybersecurity">Cybersecurity</option>
+                    <option value="CTF">CTF</option>
+                    <option value="AI">AI</option>
+                    <option value="Tools">movie</option>
+                    <option value="Learning">Learning</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <select id="sortFilter">
+                    <option value="newest">Newest first</option>
+                    <option value="oldest">Oldest first</option>
+                    <option value="name">Name A-Z</option>
+                </select>
+
+                <label class="favorite-filter">
+                    <input type="checkbox" id="favoritesOnly">
+                    Favorites only
+                </label>
+            </div>
+
+            <div id="websiteList" class="website-list"></div>
+        </section>
+
+        <section class="backup">
+            <h2>Your data</h2>
+            <p>Keep a backup of your saved websites.</p>
+            <div class="backup-actions">
+                <button id="exportBtn" class="secondary">
+                    Export backup
+                </button>
+                <button id="importBtn" class="secondary">
+                    Import backup
+                </button>
+                <input type="file" id="importFile"
+                    accept=".json,application/json" hidden>
+            </div>
+        </section>
+
+        <footer>
+            <p>PEDRO VAULT © 2026</p>
+            <span>Built for personal use.</span>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
